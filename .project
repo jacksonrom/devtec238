@@ -1,28 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<projectDescription>
-	<name>devtec238</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
-	<filteredResources>
-		<filter>
-			<id>1715344795255</id>
-			<name></name>
-			<type>30</type>
-			<matcher>
-				<id>org.eclipse.core.resources.regexFilterMatcher</id>
-				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
-			</matcher>
-		</filter>
-	</filteredResources>
-</projectDescription>
+public class PessoaModel {
+    private String name;
+    private String cpf;
+    private String endereco;
+
+    public PessoaModel(String name, String cpf, String endereco) {
+        this.name = name;
+        this.cpf = cpf;
+        this.endereco = endereco;
+    }
+
+    // Getters e Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    @Override
+    public String toString() {
+        return "PessoaModel{" +
+                "name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", endereco='" + endereco + '\'' +
+                '}';
+    }
+}
+
+public class ClienteModel extends PessoaModel {
+    private String notaFiscal;
+    private String pedido;
+
+    public ClienteModel(String name, String cpf, String endereco, String notaFiscal, String pedido) {
+        super(name, cpf, endereco);
+        this.notaFiscal = notaFiscal;
+        this.pedido = pedido;
+    }
+
+    // Getters e Setters
+    public String getNotaFiscal() {
+        return notaFiscal;
+    }
+
+    public void setNotaFiscal(String notaFiscal) {
+        this.notaFiscal = notaFiscal;
+    }
+
+    public String getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(String pedido) {
+        this.pedido = pedido;
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteModel{" +
+                "notaFiscal='" + notaFiscal + '\'' +
+                ", pedido='" + pedido + '\'' +
+                "} " + super.toString();
+    }
+}
+
+public class VendedorModel extends PessoaModel {
+    private String compra;
+    private String venda;
+
+    public VendedorModel(String name, String cpf, String endereco, String compra, String venda) {
+        super(name, cpf, endereco);
+        this.compra = compra;
+        this.venda = venda;
+    }
+
+    // Getters e Setters
+    public String getCompra() {
+        return compra;
+    }
+
+    public void setCompra(String compra) {
+        this.compra = compra;
+    }
+
+    public String getVenda() {
+        return venda;
+    }
+
+    public void setVenda(String venda) {
+        this.venda = venda;
+    }
+
+    @Override
+    public String toString() {
+        return "VendedorModel{" +
+                "compra='" + compra + '\'' +
+                ", venda='" + venda + '\'' +
+                "} " + super.toString();
+    }
+}
+ 
